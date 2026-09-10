@@ -1,0 +1,8 @@
+{
+  "name":"ns05-v117-score-gateway",
+  "private":true,
+  "type":"module",
+  "scripts":{"start":"node index.mjs"},
+  "engines":{"node":">=20"},
+  "dependencies":{"pg":"^8.16.3"}
+}

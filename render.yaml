@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ns05-v117-score-gateway
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: LOOTLOCKER_SERVER_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ns05-security-db
+          property: connectionString
+      - key: DB_REQUIRED
+        value: "true"
+      - key: SCORE_BOARD
+        value: night_shift_score
+      - key: TIME_BOARD
+        value: night_shift_time
+      - key: GAME_VERSION
+        value: 1.17.5.0
+
+databases:
+  - name: ns05-security-db
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "18"
+    databaseName: ns05security
+    user: ns05

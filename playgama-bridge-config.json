@@ -1,0 +1,35 @@
+{
+  "advertisement": {
+    "minimumDelayBetweenInterstitial": 65,
+    "initialInterstitialDelay": 60,
+    "interstitial": {
+      "disable": false,
+      "placementFallback": "shift_end",
+      "placements": [
+        {
+          "id": "shift_end"
+        }
+      ]
+    },
+    "rewarded": {
+      "disable": false,
+      "preloadOnStart": "extra_life",
+      "placementFallback": "extra_life",
+      "placements": [
+        {
+          "id": "extra_life"
+        }
+      ]
+    }
+  },
+  "leaderboards": [
+    {
+      "id": "night_shift_score",
+      "isMain": true
+    },
+    {
+      "id": "night_shift_time",
+      "isMain": false
+    }
+  ]
+}

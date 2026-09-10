@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#030507">
+<title>Ночная смена — NS-05 V117</title>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/game.css">
+<link rel="preload" href="assets/fonts/oswald-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/oswald-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body><div id="settings-ui" aria-label="Настройки"></div>
+<div id="rotate">Поверните устройство горизонтально</div>
+<canvas id="game" aria-label="Ночная смена — NS-05"></canvas>
+<!-- V107: перехват ошибок подключён до кода игры — без сообщений на экране -->
+<script src="js/errors.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/save.js"></script>
+<script src="js/anticheat.js"></script>
+<script src="js/secrets.js"></script>
+<!-- V116: настройка и клиент интернет-топа игроков. Ключ вставляется в netlb-config.js -->
+<script src="netlb-config.js"></script>
+<script src="js/netlb.js"></script>
+<script src="js/lang/en.js"></script>
+<script src="js/lang/de.js"></script>
+<script src="js/lang/fr.js"></script>
+<script src="js/lang/es.js"></script>
+<script src="js/lang/pl.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/voice_manifest.js"></script>
+<script src="js/voice.js"></script>
+<!-- V114: единственный платформенный слой — Instant Games Bridge (Playgama Bridge v2).
+     Внешний /sdk.js Яндекс Игр и модуль js/yandex.js из сборки удалены полностью.
+     Мост лежит локально в vendor/, внешних запросов при загрузке нет. -->
+<script src="js/bridge.js"></script>
+<script src="js/world.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/lighting.js"></script>
+<script src="js/monster_audio.js"></script>
+<!-- V93: 8-битная вставка между сменами — всё рисуется кодом, без файлов -->
+<script src="js/minigame.js"></script>
+<script src="js/monster.js"></script>
+<script src="js/phone.js"></script>
+<script src="js/call911.js"></script>
+<script src="js/radio.js"></script>
+<script src="js/postfx.js"></script>
+<script src="js/screamer_art.js"></script>
+<script src="js/screamer.js"></script>
+<script src="js/endings_truth.js"></script>
+<!-- V94: коды финалов — последняя сцена каждой из пяти концовок -->
+<script src="js/endings_coda.js"></script>
+<!-- V100: общее вступление всех пяти концовок (диафрагма, движение, внезапность) -->
+<script src="js/end_intro.js"></script>
+<!-- V101: вид от первого лица человека (веки, кровь, трава, флэшбэк, белый покой) -->
+<script src="js/end_pov.js"></script>
+<!-- V101: переписанные раскадровки «Рассвет», «Пепел», «Ещё один костюм» -->
+<script src="js/end_scenes.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+<!-- V103: ТРЕБОВАНИЯ ЯНДЕКС ИГР — В СБОРКЕ НЕТ ПОСТОРОННЕГО КОДА.
+     ПОЧЕМУ ТАК БЫЛО: в index.html лежал служебный скрипт редактора превью
+     (~330 строк): он слушал postMessage с чужих доменов и мог подменять
+     шрифты и стили страницы. В игре, которую отправляют на модерацию, такого
+     кода быть не должно — это сторонняя интеграция и лишние внешние адреса.
+     СТАЛО: скрипт удалён целиком, в сборке остались только файлы игры. -->
+</body>
+</html>
